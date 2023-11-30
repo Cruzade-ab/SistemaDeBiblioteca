@@ -9,7 +9,15 @@ namespace MyApp // Note: actual namespace depends on the project name.
         {
             foreach (Libro elemento in lista)
             {
-                Console.WriteLine($"Titulo: {elemento.Titulo}, Autor: {elemento.Autor}, ISBN: {elemento.Isbn}, Prestado: {elemento.Prestado}");
+                elemento.MostrarInformacion(); 
+            }
+        }
+
+        static void UsuariosEnLista(List <Usuario> lista)
+        {
+            foreach (Usuario elemento in lista)
+            {
+                elemento.MostrarInformacion();
             }
         }
         static void Main(string[] args)
@@ -26,10 +34,6 @@ namespace MyApp // Note: actual namespace depends on the project name.
             Libro libro9 = new Libro("La Odisea", "Homero", "978-0140268867");
             Libro libro10 = new Libro("El Gran Gatsby", "F. Scott Fitzgerald", "978-0743273565");
 
-            // Se crean las instancias de usuarios
-            Usuario usuario1 = new Usuario("Juan", "Pérez", "001", "Estudiante");
-            Usuario usuario2 = new Usuario("María", "García", "002", "Profesora");
-
             //Se crea una instancia de la clase ListaDeLibros llamada LibrosDeLaBiblioteca ya que son los libros ya existentes en la biblioteca.
             ListaDeLibros LibrosDeLaBiblioteca = new ListaDeLibros(libro1, libro2,libro3, libro4,libro5, libro6,libro7, libro8,libro9, libro10);
 
@@ -44,15 +48,29 @@ namespace MyApp // Note: actual namespace depends on the project name.
             var LibrosPrestados = LibrosDeLaBiblioteca.LibrosPrestados(); 
             //Se inicializan dos listas para cada situacion, *Cada vez que cambie algun estado de prestado se debe volver a llamar esta lista*
             
+
+            // Se crean las instancias de usuarios
+            Usuario usuario1 = new Usuario("Juan", "Pérez", "001", "Estudiante");
+            Usuario usuario2 = new Usuario("María", "García", "002", "Profesor");
+
+            ListaDeUsuarios Usuarios = new ListaDeUsuarios(usuario1, usuario2);
+
+            var AllUsuarios = Usuarios.TodosLosUsuarios();
+            var ListaEstudiantes = Usuarios.Estudiantes();
+            var ListaProfesores = Usuarios.Profesores();
+
              while (true)
             {
                 Console.WriteLine("\nMenú de Gestión de Biblioteca:");
                 Console.WriteLine("1. Mostrar todos los libros");
                 Console.WriteLine("2. Mostrar libros disponibles");
                 Console.WriteLine("3. Mostrar libros prestados");
-                Console.WriteLine("4. Prestar un libro");
-                Console.WriteLine("5. Devolver un libro");
-                Console.WriteLine("6. Salir");
+                Console.WriteLine("4. Mostrar Usuarios");
+                Console.WriteLine("5. Mostrar Estudiantes");
+                Console.WriteLine("6. Mostrar Profesores");
+                Console.WriteLine("7. Prestar un libro");
+                Console.WriteLine("8. Devolver un libro");
+                Console.WriteLine("9. Salir");
                 Console.Write("Elige una opción: ");
 
                 string opcion = Console.ReadLine();
@@ -80,16 +98,27 @@ namespace MyApp // Note: actual namespace depends on the project name.
                         break;
 
                     case "4":
-                        // Lógica para prestar un libro
-                        // Puedes pedir al usuario el ISBN del libro a prestar, etc.
+                        Console.WriteLine("Todos los Usuarios");
+                        UsuariosEnLista(AllUsuarios);
                         break;
 
                     case "5":
-                        // Lógica para devolver un libro
-                        // Similar a prestar, pero para devolver
+                        Console.WriteLine("Todos los Estudiantes");
+                        ListaEstudiantes = Usuarios.Estudiantes();
+                        UsuariosEnLista(ListaEstudiantes);
                         break;
-
                     case "6":
+                        Console.WriteLine("Todos los Profesores");
+                        ListaProfesores = Usuarios.Profesores();
+                        UsuariosEnLista(ListaProfesores);
+                        break;
+                    case "7":
+                        
+                        break;
+                    case "8":
+                        
+                        break;
+                    case "9":
                         Console.WriteLine("Saliendo del programa...");
                         return; // Sale del programa
 
