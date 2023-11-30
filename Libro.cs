@@ -16,9 +16,13 @@ public class Libro //Se crea la clase Publica Libro
         Prestado = false;
     }
 
-    //Metodo para mostrar la informacion del libro
+    //Metodo para mostrar la informacion del libro 
     public void MostrarInformacion()
     {
         Console.WriteLine($"Libro: {Titulo}, Autor: {Autor}, ISBN: {Isbn}, Prestado: {Prestado}");
+    }
+
+    public void RegistrarLibro(){
+        
     }
 }
