@@ -1,0 +1,15 @@
+C:\Users\abima\SistemaDeBiblioteca\obj\Debug\net7.0\SistemaDeBiblioteca.csproj.AssemblyReference.cache
+C:\Users\abima\SistemaDeBiblioteca\obj\Debug\net7.0\SistemaDeBiblioteca.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\abima\SistemaDeBiblioteca\obj\Debug\net7.0\SistemaDeBiblioteca.AssemblyInfoInputs.cache
+C:\Users\abima\SistemaDeBiblioteca\obj\Debug\net7.0\SistemaDeBiblioteca.AssemblyInfo.cs
+C:\Users\abima\SistemaDeBiblioteca\obj\Debug\net7.0\SistemaDeBiblioteca.csproj.CoreCompileInputs.cache
+C:\Users\abima\SistemaDeBiblioteca\bin\Debug\net7.0\SistemaDeBiblioteca.exe
+C:\Users\abima\SistemaDeBiblioteca\bin\Debug\net7.0\SistemaDeBiblioteca.deps.json
+C:\Users\abima\SistemaDeBiblioteca\bin\Debug\net7.0\SistemaDeBiblioteca.runtimeconfig.json
+C:\Users\abima\SistemaDeBiblioteca\bin\Debug\net7.0\SistemaDeBiblioteca.dll
+C:\Users\abima\SistemaDeBiblioteca\bin\Debug\net7.0\SistemaDeBiblioteca.pdb
+C:\Users\abima\SistemaDeBiblioteca\obj\Debug\net7.0\SistemaDeBiblioteca.dll
+C:\Users\abima\SistemaDeBiblioteca\obj\Debug\net7.0\refint\SistemaDeBiblioteca.dll
+C:\Users\abima\SistemaDeBiblioteca\obj\Debug\net7.0\SistemaDeBiblioteca.pdb
+C:\Users\abima\SistemaDeBiblioteca\obj\Debug\net7.0\SistemaDeBiblioteca.genruntimeconfig.cache
+C:\Users\abima\SistemaDeBiblioteca\obj\Debug\net7.0\ref\SistemaDeBiblioteca.dll
