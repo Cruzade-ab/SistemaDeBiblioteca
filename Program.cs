@@ -20,6 +20,12 @@ namespace MyApp // Note: actual namespace depends on the project name.
                 elemento.MostrarInformacion();
             }
         }
+
+        static void PrestamosEnLista(List<Prestamo> lista){
+            foreach (Prestamo elemento in lista){
+                elemento.MostrarInformacion();
+            }
+        }
         static void Main(string[] args)
         {
             // A continuacion se definen las instancias de libros ya en la biblioteca
@@ -37,13 +43,11 @@ namespace MyApp // Note: actual namespace depends on the project name.
             //Se crea una instancia de la clase ListaDeLibros llamada LibrosDeLaBiblioteca ya que son los libros ya existentes en la biblioteca.
             ListaDeLibros LibrosDeLaBiblioteca = new ListaDeLibros(libro1, libro2,libro3, libro4,libro5, libro6,libro7, libro8,libro9, libro10);
 
+            
             var AllBooks = LibrosDeLaBiblioteca.TodosLosLibros(); 
             //Se crea una lista AllBooks que obtiene sus valores de LibrosDeBiblioteca, lo cual la hace una lista independiente a esta instancia.
             //Nota* Utilizo var, ya que el tipo de dato List<Libro> esta definido en el metodo
-
-            //Para mostrar los datos de esta nueva lista se llama la funcion LibrosEnLista  que contienen dicha logica
-            // LibrosEnLista(AllBooks);
-
+            //Para mostrar los datos de esta nueva lista se llama la funcion LibrosEnLista  que contienen dicha logica LibrosEnLista(AllBooks);
             var LibrosDisponibles = LibrosDeLaBiblioteca.LibrosDisponibles(); 
             var LibrosPrestados = LibrosDeLaBiblioteca.LibrosPrestados(); 
             //Se inicializan dos listas para cada situacion, *Cada vez que cambie algun estado de prestado se debe volver a llamar esta lista*
@@ -58,6 +62,25 @@ namespace MyApp // Note: actual namespace depends on the project name.
             var AllUsuarios = Usuarios.TodosLosUsuarios();
             var ListaEstudiantes = Usuarios.Estudiantes();
             var ListaProfesores = Usuarios.Profesores();
+
+            Prestamo prestamo1 = new Prestamo("P01", libro1, usuario1, DateTime.Now);
+            libro1.RegistrarLibroPrestado();
+            prestamo1.MostrarInformacion();
+            Prestamo prestamo2 = new Prestamo("P02", libro2, usuario1, DateTime.Now);
+            libro2.RegistrarLibroPrestado();
+            prestamo2.MostrarInformacion();
+            Prestamo prestamo3 = new Prestamo("P03", libro3, usuario2, DateTime.Now);
+            libro3.RegistrarLibroPrestado();
+            prestamo3.MostrarInformacion();
+
+            ListaDePrestamos Prestamos = new ListaDePrestamos(prestamo1, prestamo2);
+
+            var AllPrestamos = Prestamos.TodosLosPrestamos();
+            var PrestamosVijentes = Prestamos.prestamosSinEntregar();
+            var PrestamosAntiguos = Prestamos.prestamosDevueltos();
+
+
+
 
              while (true)
             {
@@ -86,6 +109,7 @@ namespace MyApp // Note: actual namespace depends on the project name.
 
                             case "1":
                                 Console.WriteLine("Todos los libros en la biblioteca: ");
+                                AllBooks = LibrosDeLaBiblioteca.TodosLosLibros();
                                 LibrosEnLista(AllBooks);
                                 break;
                             case "2":
@@ -121,6 +145,7 @@ namespace MyApp // Note: actual namespace depends on the project name.
 
                             case "1":
                                 Console.WriteLine("Todos los Usuarios");
+                                AllUsuarios = Usuarios.TodosLosUsuarios();
                                 UsuariosEnLista(AllUsuarios);
                                 break;
                             case "2":
@@ -140,7 +165,40 @@ namespace MyApp // Note: actual namespace depends on the project name.
                         break;
                         
 
-                    case "5":
+                    case "3":
+                        Console.WriteLine("1. Mostrar Todos los prestamos");
+                        Console.WriteLine("2. Prestamos Actuales");
+                        Console.WriteLine("3. Prestamos Pasados");
+                        Console.WriteLine("4. Salir del Programa");
+                        Console.Write("Elige una opción: ");
+
+                        string subopcionPrestamos = Console.ReadLine();
+
+                        switch (subopcionPrestamos){
+
+                            case "1":
+                                Console.WriteLine("Todos los Prestamos: ");
+                                AllPrestamos = Prestamos.TodosLosPrestamos();
+                                PrestamosEnLista(AllPrestamos);
+                                break;
+                            case "2":
+                                PrestamosVijentes = Prestamos.prestamosSinEntregar(); 
+                                Console.WriteLine("Todos los prestamos vijentes: ");
+                                PrestamosEnLista(PrestamosVijentes);
+                                break;
+                                
+                            case "3":
+                                PrestamosAntiguos = Prestamos.prestamosDevueltos(); 
+
+                                Console.WriteLine("Todos los prestamos pasados: ");
+                                PrestamosEnLista(PrestamosAntiguos);
+                            break;
+
+                            case "4":
+                                Console.WriteLine("Saliendo del programa...");
+                                return; // Sale del programa
+                        }
+                        break;
                         
                     case "6":
                         

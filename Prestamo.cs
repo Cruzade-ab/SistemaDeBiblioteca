@@ -1,7 +1,7 @@
 public class Prestamo{
 
     //Clase Libro
-    public int Id {get; set;}
+    public string Id {get; set;}
     public Libro Libro {get; set;} 
     public Usuario Usuario{get; set;}
     public DateTime FechaPrestamo {get; set;}
@@ -12,7 +12,7 @@ public class Prestamo{
     public Prestamo(){
     }
 
-    public Prestamo(int id, Libro libro, Usuario usuario, DateTime fechaPrestamo){
+    public Prestamo(string id, Libro libro, Usuario usuario, DateTime fechaPrestamo){
         Id = id;
         Libro = libro;
         Usuario = usuario;
@@ -32,10 +32,10 @@ public class Prestamo{
 
     public void MostrarInformacion(){
         if (!entregado){
-            Console.WriteLine($"Id: {Id}, Libro: {Libro.Titulo}, Usuario: {Usuario.nombre} {Usuario.apellido}, Fecha Prestamo: {FechaPrestamo}");
+            Console.WriteLine($"Id: {Id}, Libro: {Libro.Titulo}, Usuario: {Usuario.TipoUsuario}: {Usuario.nombre} {Usuario.apellido}, Fecha Prestamo: {FechaPrestamo}");
         }
         else{
-            Console.WriteLine($"Id: {Id}, Libro: {Libro.Titulo}, Usuario: {Usuario.nombre} {Usuario.apellido}, Fecha Prestamo: {FechaPrestamo}, Fecha de Devolucion{FechaDevuelto}");
+            Console.WriteLine($"Id: {Id}, Libro: {Libro.Titulo}, Usuario: {Usuario.TipoUsuario}: {Usuario.nombre} {Usuario.apellido}, Fecha Prestamo: {FechaPrestamo}, Fecha de Devolucion{FechaDevuelto}");
         }
     }
 }

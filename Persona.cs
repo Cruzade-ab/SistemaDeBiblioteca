@@ -5,7 +5,8 @@ public abstract class Persona //Se define la clase base Persona
  public string apellido{get; set;}
  public string id{get; set;}
 
-
+public Persona(){
+}
  //Metodo constructor
  public Persona(string nombre, string apellido, string id)
  {

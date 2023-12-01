@@ -6,8 +6,9 @@ public class Libro //Se crea la clase Publica Libro
     public string Isbn { get; set; }
     public bool Prestado { get; set; }
 
-
     //Metodo constructor 
+    public Libro(){
+    }
     public Libro(string titulo, string autor, string isbn)
     {
         Titulo = titulo;
@@ -22,7 +23,22 @@ public class Libro //Se crea la clase Publica Libro
         Console.WriteLine($"Libro: {Titulo}, Autor: {Autor}, ISBN: {Isbn}, Prestado: {Prestado}");
     }
 
-    public void RegistrarLibro(){
-        
+    public void RegistrarLibroPrestado(){
+        if (!Prestado){
+            Prestado = true;
+            Console.WriteLine("Libro prestado");
+        }
+        else{
+            Console.WriteLine("Libro ya esta prestado");
+        }
+    }
+    public void RegistrarLibroEntregado(){
+        if (Prestado){
+            Prestado = false;
+            Console.WriteLine("Libro entregado");
+        }
+        else{
+            Console.WriteLine("Libro ya esta entregado");
+        }
     }
 }
