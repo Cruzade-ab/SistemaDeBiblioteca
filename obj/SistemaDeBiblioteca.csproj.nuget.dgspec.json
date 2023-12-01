@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\abima\\SistemaDeBiblioteca\\SistemaDeBiblioteca.csproj": {}
+    "C:\\Users\\Abimael Santa Cruz\\SistemaBiblioteca\\SistemaDeBiblioteca\\SistemaDeBiblioteca.csproj": {}
   },
   "projects": {
-    "C:\\Users\\abima\\SistemaDeBiblioteca\\SistemaDeBiblioteca.csproj": {
+    "C:\\Users\\Abimael Santa Cruz\\SistemaBiblioteca\\SistemaDeBiblioteca\\SistemaDeBiblioteca.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\abima\\SistemaDeBiblioteca\\SistemaDeBiblioteca.csproj",
+        "projectUniqueName": "C:\\Users\\Abimael Santa Cruz\\SistemaBiblioteca\\SistemaDeBiblioteca\\SistemaDeBiblioteca.csproj",
         "projectName": "SistemaDeBiblioteca",
-        "projectPath": "C:\\Users\\abima\\SistemaDeBiblioteca\\SistemaDeBiblioteca.csproj",
-        "packagesPath": "C:\\Users\\abima\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\abima\\SistemaDeBiblioteca\\obj\\",
+        "projectPath": "C:\\Users\\Abimael Santa Cruz\\SistemaBiblioteca\\SistemaDeBiblioteca\\SistemaDeBiblioteca.csproj",
+        "packagesPath": "C:\\Users\\Abimael Santa Cruz\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Abimael Santa Cruz\\SistemaBiblioteca\\SistemaDeBiblioteca\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\abima\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Abimael Santa Cruz\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -55,7 +53,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

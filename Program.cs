@@ -143,8 +143,11 @@ namespace MyApp // Note: actual namespace depends on the project name.
                             break;
 
                             case "4":
-                                Console.WriteLine("Saliendo del programa...");
-                                return; // Sale del programa
+                                Console.WriteLine("Saliendo...");
+                                break;
+                            default:
+                            Console.WriteLine("Opción no válida. Por favor, intenta de nuevo.");
+                            break;
                         }
 
                         break;
@@ -181,9 +184,13 @@ namespace MyApp // Note: actual namespace depends on the project name.
                                 UsuariosEnLista(ListaProfesores);//Se muestra su Informacion con la funcion Libros en Lista
                                 break;
                             case "4":
-                                Console.WriteLine("Saliendo del programa...");
-                              
-                                return; // Sale del programa
+                                Console.WriteLine("Saliendo...");
+                                break;
+
+                            default:
+                            Console.WriteLine("Opción no válida. Por favor, intenta de nuevo.");
+                            break;
+                            
                         }
                         break;
 
@@ -222,8 +229,13 @@ namespace MyApp // Note: actual namespace depends on the project name.
                                 break;
 
                             case "4":
-                                Console.WriteLine("Saliendo del programa...");
-                                return; // Sale del programa
+                                Console.WriteLine("Saliendo...");
+                                break;
+                            
+                            default:
+                            Console.WriteLine("Opción no válida. Por favor, intenta de nuevo.");
+                            break;
+
 
                         }
                         break;
@@ -289,7 +301,11 @@ namespace MyApp // Note: actual namespace depends on the project name.
                             
                             case "3":
                                 Console.WriteLine("Saliendo...");
-                                return;
+                                break;
+
+                            default:
+                            Console.WriteLine("Opción no válida. Por favor, intenta de nuevo.");
+                            break;
                         }
                         break;
                     case "5":
