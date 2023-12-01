@@ -1,14 +1,16 @@
-public class Prestamo{
+public class Prestamo{ //Clase Prestamos
 
-    //Clase Libro
+    // Se inicializan las propiedades
     public string Id {get; set;}
-    public Libro Libro {get; set;} 
-    public Usuario Usuario{get; set;}
+    public Libro Libro {get; set;} //Tiene como propiedad Objeto -Libro-
+    public Usuario Usuario{get; set;} //Tiene como propiedad objeto usuario
     public DateTime FechaPrestamo {get; set;}
     public DateTime FechaDevuelto {get; set;}
 
     public bool entregado{get; set;}
 
+
+    //Metodo Constructor
     public Prestamo(){
     }
 
@@ -20,8 +22,10 @@ public class Prestamo{
         entregado = false;
     }
 
+
+    //Metodo para registrar un Libro como entregado, lo cual se le asigna la Fecha de Devolucion y se registra como entregado = true.
     public void EntregarLibro(){
-        if (!entregado){ //Logica si es cierto, entregado = falso, !falso = Cierto
+        if (!entregado){ //(Logica si es cierto), entregado = falso, !falso = Cierto
             FechaDevuelto = DateTime.Now;
             entregado = true;
         }
@@ -30,6 +34,8 @@ public class Prestamo{
         }
     }
 
+
+    //Metodo Para mostrar la informacion
     public void MostrarInformacion(){
         if (!entregado){
             Console.WriteLine($"Id: {Id}, Libro: {Libro.Titulo}, Usuario: {Usuario.TipoUsuario}: {Usuario.nombre} {Usuario.apellido}, Fecha Prestamo: {FechaPrestamo}");

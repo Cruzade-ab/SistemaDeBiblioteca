@@ -5,10 +5,10 @@ public abstract class Persona //Se define la clase base Persona
  public string apellido{get; set;}
  public string id{get; set;}
 
-public Persona(){
+public Persona(){ //Metodo constructor para asignar e inicializar sus propiedades individuales
 }
- //Metodo constructor
- public Persona(string nombre, string apellido, string id)
+ 
+ public Persona(string nombre, string apellido, string id) //Metodo constructor cuando se inicializa con sus propiedades
  {
  this.nombre = nombre;
  this.apellido = apellido;

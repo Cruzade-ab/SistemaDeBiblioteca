@@ -16,9 +16,9 @@ public class ListaDeLibros //Se crea una clase para representar La lista de libr
     }
 
     //Metodo para eliminar Libros.
-    public void EliminarLibro(string isbn)
+    public void EliminarLibro(Libro libro)
     {
-        libros.RemoveAll(libro => libro.Isbn == isbn);
+        libros.Remove(libro);
     }
 
     //Metodo para buscar Libros por Isbn, se define Libro ya que devuelve un objeto de esta clase. 
