@@ -13,7 +13,6 @@ namespace MyApp // Note: actual namespace depends on the project name.
             }
         }
 
-
         static void UsuariosEnLista(List <Usuario> lista)
         {
             foreach (Usuario elemento in lista)
@@ -81,9 +80,9 @@ namespace MyApp // Note: actual namespace depends on the project name.
                         Console.WriteLine("4. Salir del Programa");
                         Console.Write("Elige una opción: ");
 
-                        string subopcion = Console.ReadLine();
+                        string subopcionLibros = Console.ReadLine();
 
-                        switch (subopcion){
+                        switch (subopcionLibros){
 
                             case "1":
                                 Console.WriteLine("Todos los libros en la biblioteca: ");
@@ -106,6 +105,7 @@ namespace MyApp // Note: actual namespace depends on the project name.
                                 Console.WriteLine("Saliendo del programa...");
                                 return; // Sale del programa
                         }
+                        break;
 
                     case "2":
 
@@ -115,9 +115,9 @@ namespace MyApp // Note: actual namespace depends on the project name.
                         Console.WriteLine("4. Salir del Programa");
                         Console.Write("Elige una opción: ");
                         
-                        string subopcion = Console.ReadLine();
+                        string subopcionUsuarios = Console.ReadLine();
 
-                        switch (subopcion){
+                        switch (subopcionUsuarios){
 
                             case "1":
                                 Console.WriteLine("Todos los Usuarios");
@@ -137,6 +137,7 @@ namespace MyApp // Note: actual namespace depends on the project name.
                                 Console.WriteLine("Saliendo del programa...");
                                 return; // Sale del programa
                         }
+                        break;
                         
 
                     case "5":

@@ -1,9 +1,9 @@
 public abstract class Persona //Se define la clase base Persona
 {
-    //Se definen las propiedades de la clase Persona como protected para poder acceder a ellas desde sus subclases.
- protected string nombre;
- protected string apellido;
- protected string id;
+    //Se definen las propiedades de la clase Persona como publicas para acceder a ellas desde cualquier parte
+ public string nombre{get; set;}
+ public string apellido{get; set;}
+ public string id{get; set;}
 
 
  //Metodo constructor
@@ -12,23 +12,6 @@ public abstract class Persona //Se define la clase base Persona
  this.nombre = nombre;
  this.apellido = apellido;
  this.id = id;
- }
-
- //A continuacion se definen las propiedades a travez de los metodos get y set
- public string Nombre
- {
- get { return nombre; }
- set { nombre = value; }
- }
- public string Apellido
- {
- get { return apellido; }
- set { apellido = value; }
- }
- public string Id
- {
- get { return id; }
- set { id = value; }
  }
 
  //Se crea un metodo abstracto para mostar la informacion, que sera sobre escrito en las clases hijas
