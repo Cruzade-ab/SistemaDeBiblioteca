@@ -1,6 +1,6 @@
 public class Usuario : Persona //Se define la subclase de Persona Usuario
 {
-// Se agregan propiedades a la classe hija
+// Se agregan propiedades a la clase hija
  public string TipoUsuario{get; set;}
 
  public Usuario(){

@@ -54,8 +54,8 @@ namespace MyApp // Note: actual namespace depends on the project name.
             
 
             // Se crean las instancias de usuarios
-            Usuario usuario1 = new Usuario("Juan", "Pérez", "001", "Estudiante");
-            Usuario usuario2 = new Usuario("María", "García", "002", "Profesor");
+            Usuario usuario1 = new Usuario("Juan", "Pérez", "U001", "Estudiante");
+            Usuario usuario2 = new Usuario("María", "García", "U002", "Profesor");
 
             ListaDeUsuarios Usuarios = new ListaDeUsuarios(usuario1, usuario2);
 
@@ -88,8 +88,8 @@ namespace MyApp // Note: actual namespace depends on the project name.
                 Console.WriteLine("1. Mostrar libros");
                 Console.WriteLine("2. Mostrar Usuarios");
                 Console.WriteLine("3. Mostar Prestamos");
-                Console.WriteLine("4. Registrar Libro");
-                Console.WriteLine("5. Registrar Usuario");
+                Console.WriteLine("4. Registrar Usuario");
+                Console.WriteLine("5. Registrar Libro");
                 Console.WriteLine("5. Prestar un libro");
                 Console.WriteLine("6. Devolver un libro");
                 Console.WriteLine("7. Salir");
@@ -204,12 +204,81 @@ namespace MyApp // Note: actual namespace depends on the project name.
 
                         }
                         break;
+                    case "4":
+
+                        Console.WriteLine("Registrar usuario: ");
+                        Console.WriteLine("1. Estudiante");
+                        Console.WriteLine("2. Profesor");
+                        Console.WriteLine("3. Salir");
                         
-                        
-                    case "6":
-                        
+                        Usuario usuario = new Usuario();
+
+                        string opcionRegistrousuario = Console.ReadLine();
+
+                        switch(opcionRegistrousuario){
+                            case "1":
+                                usuario.TipoUsuario = "Estudiante";
+
+                                Console.WriteLine("Indique el Id: ");
+                                usuario.id = Console.ReadLine();
+
+                                Console.WriteLine("Indique el nombre: ");
+                                usuario.nombre = Console.ReadLine();
+
+                                Console.WriteLine("Indique el apellido: ");
+                                usuario.apellido = Console.ReadLine();
+
+                                Console.WriteLine("Usuario registrado: ");
+
+                                usuario.MostrarInformacion();
+                                Usuarios.AgregarUsuarios(usuario);
+
+                                break;
+
+                            case "2":
+                                usuario.TipoUsuario = "Profesor";
+
+                                Console.Write("Indique el Id: ");
+                                usuario.id = Console.ReadLine();
+
+                                Console.Write("Indique el nombre: ");
+                                usuario.nombre = Console.ReadLine();
+
+                                Console.Write("Indique el apellido: ");
+                                usuario.apellido = Console.ReadLine();
+
+                                Console.WriteLine("Usuario registrado: ");
+
+                                usuario.MostrarInformacion();
+                                Usuarios.AgregarUsuarios(usuario);
+
+                                break;
+                            
+                            case "3":
+                                Console.WriteLine("Saliendo...");
+                                return;
+                        }
                         break;
-                    case "7":
+                    case "5":
+                        Console.WriteLine("Registrar nuevo Libro: ");
+                        Libro libro = new Libro();
+
+                        Console.Write("Indique el Titulo: ");
+                        libro.Titulo = Console.ReadLine();
+
+                        Console.Write("Indique el Autor: ");
+                        libro.Autor = Console.ReadLine();
+
+                        Console.Write("Indique el Isbn: ");
+                        libro.Isbn = Console.ReadLine();
+
+                        Console.WriteLine("Libro registrado: ");
+                        libro.Prestado = false; 
+
+                        libro.MostrarInformacion();
+                        LibrosDeLaBiblioteca.AgregarLibro(libro);
+
+
                         
                         break;
                     case "8":
