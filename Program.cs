@@ -87,9 +87,12 @@ namespace MyApp // Note: actual namespace depends on the project name.
                 Console.WriteLine("\nMenú de Gestión de Biblioteca:");
                 Console.WriteLine("1. Mostrar libros");
                 Console.WriteLine("2. Mostrar Usuarios");
-                Console.WriteLine("7. Prestar un libro");
-                Console.WriteLine("8. Devolver un libro");
-                Console.WriteLine("9. Salir");
+                Console.WriteLine("3. Mostar Prestamos");
+                Console.WriteLine("4. Registrar Libro");
+                Console.WriteLine("5. Registrar Usuario");
+                Console.WriteLine("5. Prestar un libro");
+                Console.WriteLine("6. Devolver un libro");
+                Console.WriteLine("7. Salir");
                 Console.Write("Elige una opción: ");
 
                 string opcion = Console.ReadLine();
@@ -129,6 +132,7 @@ namespace MyApp // Note: actual namespace depends on the project name.
                                 Console.WriteLine("Saliendo del programa...");
                                 return; // Sale del programa
                         }
+
                         break;
 
                     case "2":
@@ -160,10 +164,10 @@ namespace MyApp // Note: actual namespace depends on the project name.
                                 break;
                             case "4":
                                 Console.WriteLine("Saliendo del programa...");
+                              
                                 return; // Sale del programa
                         }
                         break;
-                        
 
                     case "3":
                         Console.WriteLine("1. Mostrar Todos los prestamos");
@@ -192,13 +196,15 @@ namespace MyApp // Note: actual namespace depends on the project name.
 
                                 Console.WriteLine("Todos los prestamos pasados: ");
                                 PrestamosEnLista(PrestamosAntiguos);
-                            break;
+                                break;
 
                             case "4":
                                 Console.WriteLine("Saliendo del programa...");
                                 return; // Sale del programa
+
                         }
                         break;
+                        
                         
                     case "6":
                         
