@@ -4,7 +4,7 @@ namespace MyApp // Note: actual namespace depends on the project name.
 {
     internal class Program
     {
-        //Funcion que contiene nla logica para mostrar elementos en la lista
+        //Funcion que contiene la logica para mostrar elementos en la lista
         static void LibrosEnLista(List <Libro> lista)
         {
             foreach (Libro elemento in lista)
@@ -12,6 +12,7 @@ namespace MyApp // Note: actual namespace depends on the project name.
                 elemento.MostrarInformacion(); 
             }
         }
+
 
         static void UsuariosEnLista(List <Usuario> lista)
         {
@@ -62,12 +63,8 @@ namespace MyApp // Note: actual namespace depends on the project name.
              while (true)
             {
                 Console.WriteLine("\nMenú de Gestión de Biblioteca:");
-                Console.WriteLine("1. Mostrar todos los libros");
-                Console.WriteLine("2. Mostrar libros disponibles");
-                Console.WriteLine("3. Mostrar libros prestados");
-                Console.WriteLine("4. Mostrar Usuarios");
-                Console.WriteLine("5. Mostrar Estudiantes");
-                Console.WriteLine("6. Mostrar Profesores");
+                Console.WriteLine("1. Mostrar libros");
+                Console.WriteLine("2. Mostrar Usuarios");
                 Console.WriteLine("7. Prestar un libro");
                 Console.WriteLine("8. Devolver un libro");
                 Console.WriteLine("9. Salir");
@@ -78,39 +75,74 @@ namespace MyApp // Note: actual namespace depends on the project name.
                 switch (opcion)
                 {
                     case "1":
-                        Console.WriteLine("Todos los libros en la biblioteca: ");
-                        LibrosEnLista(AllBooks);
-                        break;
+                        Console.WriteLine("1. Mostrar Todos los libros");
+                        Console.WriteLine("2. Mostrar libros disponibles");
+                        Console.WriteLine("3. Mostrar libros prestados");
+                        Console.WriteLine("4. Salir del Programa");
+                        Console.Write("Elige una opción: ");
+
+                        string subopcion = Console.ReadLine();
+
+                        switch (subopcion){
+
+                            case "1":
+                                Console.WriteLine("Todos los libros en la biblioteca: ");
+                                LibrosEnLista(AllBooks);
+                                break;
+                            case "2":
+                                LibrosDisponibles = LibrosDeLaBiblioteca.LibrosDisponibles(); 
+                                Console.WriteLine("Todos los libros disponibles: ");
+                                LibrosEnLista(LibrosDisponibles);
+                                break;
+                                
+                            case "3":
+                                LibrosPrestados = LibrosDeLaBiblioteca.LibrosPrestados(); 
+
+                                Console.WriteLine("Todos los libros prestados: ");
+                                LibrosEnLista(LibrosPrestados);
+                            break;
+
+                            case "4":
+                                Console.WriteLine("Saliendo del programa...");
+                                return; // Sale del programa
+                        }
 
                     case "2":
 
-                        LibrosDisponibles = LibrosDeLaBiblioteca.LibrosDisponibles(); 
+                        Console.WriteLine("1. Mostrar Todos usuarios");
+                        Console.WriteLine("2. Mostrar Estudiantes");
+                        Console.WriteLine("3. Mostrar Profesores");
+                        Console.WriteLine("4. Salir del Programa");
+                        Console.Write("Elige una opción: ");
+                        
+                        string subopcion = Console.ReadLine();
 
-                        Console.WriteLine("Todos los libros disponibles: ");
-                        LibrosEnLista(LibrosDisponibles);
-                        break;
+                        switch (subopcion){
 
-                    case "3":
-                        LibrosPrestados = LibrosDeLaBiblioteca.LibrosPrestados(); 
-
-                        Console.WriteLine("Todos los libros prestados: ");
-                        LibrosEnLista(LibrosPrestados);
-                        break;
-
-                    case "4":
-                        Console.WriteLine("Todos los Usuarios");
-                        UsuariosEnLista(AllUsuarios);
-                        break;
+                            case "1":
+                                Console.WriteLine("Todos los Usuarios");
+                                UsuariosEnLista(AllUsuarios);
+                                break;
+                            case "2":
+                                Console.WriteLine("Todos los Estudiantes");
+                                ListaEstudiantes = Usuarios.Estudiantes();
+                                UsuariosEnLista(ListaEstudiantes);
+                                break;
+                            case "3":
+                                Console.WriteLine("Todos los Profesores");
+                                ListaProfesores = Usuarios.Profesores();
+                                UsuariosEnLista(ListaProfesores);
+                                break;
+                            case "4":
+                                Console.WriteLine("Saliendo del programa...");
+                                return; // Sale del programa
+                        }
+                        
 
                     case "5":
-                        Console.WriteLine("Todos los Estudiantes");
-                        ListaEstudiantes = Usuarios.Estudiantes();
-                        UsuariosEnLista(ListaEstudiantes);
-                        break;
+                        
                     case "6":
-                        Console.WriteLine("Todos los Profesores");
-                        ListaProfesores = Usuarios.Profesores();
-                        UsuariosEnLista(ListaProfesores);
+                        
                         break;
                     case "7":
                         
